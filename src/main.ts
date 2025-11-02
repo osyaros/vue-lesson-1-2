@@ -1,5 +1,5 @@
 import { createApp } from "vue";
 import "./style.css";
-import NotApp from "./components/NotApp.vue";
+import App from "./App.vue";
 
-createApp(NotApp).mount("#app");
+createApp(App).mount("#app");
