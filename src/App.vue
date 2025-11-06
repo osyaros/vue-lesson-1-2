@@ -1,13 +1,13 @@
 <template>
   <div class="app">
-    <MainPage />
+    <component :is="route.meta.layout || BaseLayout" />
   </div>
 </template>
 <script setup lang="ts">
-import MainPage from './pages/MainPage.vue';
+import { useRoute } from 'vue-router'
+import BaseLayout from './layouts/BaseLayout.vue'
 
-
+const route = useRoute()
 </script>
-<style lang="css">
-  
-</style>
+<style lang="css"></style>
+
