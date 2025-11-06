@@ -11,6 +11,11 @@
     />
   </div>
   <section v-if="selectedChat" class="chat-content">
+    <ChatHeader
+      :first-name="chats.find((chat) => chat.id == selectedChat)!.firstName"
+      :avatar="chats.find((chat) => chat.id === selectedChat)!.image"
+      :id="selectedChat"
+    />
     <div class="chat-messages">
       <ChatMessage
         v-for="message in messages"
@@ -34,6 +39,7 @@ import { onMounted, ref } from "vue"
 import ChatPreview from "../components/ChatPreview.vue"
 import ChatInput from "../components/ChatInput.vue"
 import ChatMessage from "../components/ChatMessage.vue"
+import ChatHeader from "@/components/ChatHeader.vue"
 
 interface UserInfo {
   id: number
